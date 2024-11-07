@@ -1,0 +1,981 @@
+
+
+  /*# sourceMappingURL=styles.css.map */
+  * { 
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  /* Variables CSS */
+  :root {
+      --color-terciario: #294c52;
+      --color-secundario: #c09841;
+      --color-primario: #c8c8c8;
+      --color-footer: #97A2A3;
+      --animation-timing: 300ms ease-in-out;
+  }
+  .no-scroll{ 
+    overflow: hidden;
+    height: 100%;
+  }
+  .outer-headings {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80%;
+    color: var(--color-secundario);
+    text-shadow: 4px 4px 3px var(--color-terciario);
+}
+li:hover{
+    transform: scale(1.5);
+    animation: ease 1s;
+}
+h1{
+    font-size: 55px;
+    text-align: center;
+}
+  
+  .inner-headings {
+    border: 0px solid #ddd;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+    text-transform: uppercase;
+    overflow: hidden;
+
+transform: translate(0%, 50%);
+  }
+  
+  .inner-headings span {
+    position: relative;
+    color: var(--color-secundario);
+    animation: animation 10s ease infinite;
+    text-shadow: 4px 4px 3px var(--color-terciario);
+  }
+  .menu-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha dentro de su contenedor */
+    padding: 20px;
+    margin-right: 15rem;
+    z-index: 20;
+}
+
+/* Contenedor del menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón para desplegar el menú */
+.dropdown-button {
+    background-color: var(--color-terciario);
+    color: var(--color-secundario);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    font-size: 1.3em;
+}
+
+/* Estilos del contenido desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    right: 0; /* Alinea el contenido a la derecha del botón */
+    color: #294c52;
+}
+
+/* Opciones dentro del menú */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    
+}
+
+/* Cambiar color de fondo al pasar el cursor sobre una opción */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Mostrar el contenido al hacer hover sobre el contenedor */
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 20;
+}
+
+/* Cambiar el color del botón al hacer hover */
+.dropdown-button:hover {
+    background-color:var(--color-secundario);
+    color: var(--color-terciario);
+}
+  
+  @keyframes animation {
+    0%,
+    100% {
+      top: 0;
+    }
+    20% {
+      top: 0;
+    }
+    25% {
+      top: -50px;
+    }
+    45% {
+      top: -50px;
+    }
+    50% {
+      top: -100px;
+    }
+    70% {
+      top: -100px;
+    }
+    75% {
+      top: -150px;
+    }
+    95% {
+      top: -150px;
+    }
+  }
+  
+  /* Estilos para el cuerpo */
+  body {
+      background-color: var(--color-primario);
+      background-image: url('https://image.shutterstock.com/image-vector/coffee-cup-seamless-pattern-background-260nw-546894570.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+      background-color: var(--color-terciario);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--color-secundario);
+      position: relative;
+      z-index: 10;
+  }
+
+  a:visited, 
+  a:hover, 
+  a:active,a {
+      color: inherit; /* Mantiene el color heredado para todos los estados */
+      text-decoration: none; /* Mantiene el texto sin subrayado */
+  }
+  /* Estilos para la lista de navegación */
+  ul { 
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+  }
+  
+  /* Estilos para los enlaces */
+  :visited { 
+      color: rgb(56, 64, 71);
+  }
+  
+  
+
+  
+  section h2 {
+      color: var(--color-secundario);
+      text-align: center;
+      margin: 2rem 0;
+  }
+  
+  label, body, header{ 
+
+        user-select: none; /* Para navegadores modernos */
+        -webkit-user-select: none; /* Para navegadores basados en WebKit como Chrome y Safari */
+        -moz-user-select: none; /* Para Firefox */
+        -ms-user-select: none; /* Para Internet Explorer/Edge */
+  }
+  
+  /* Estilos para el menú hamburguesa */
+  .hamburger-menu {
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+    --foreground: #c09841;
+    --background: rgb(209, 209, 209);
+    --hamburger-margin: 8px;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin);
+    left: var(--hamburger-margin);
+    z-index: 100; /* Asegura que el menú esté por encima de otros elementos */
+    cursor: pointer;
+
+    /* Añadido para transiciones suaves */
+    transition: background-color var(--animation-timing);
+}
+
+.hamburger-menu:has(input:checked) {
+    --foreground: var(--color-secundario);
+    --background: #ffffff;
+
+    /* Transición de fondo añadida */
+    transition: background-color var(--animation-timing);
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--background);
+    box-shadow: 0 0 0 1px var(--foreground);
+
+    /* Transición para el foco */
+    transition: box-shadow var(--animation-timing), border var(--animation-timing);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 9999px;
+    transform-origin: left center;
+
+    /* Transiciones añadidas */
+    transition: opacity var(--animation-timing), width var(--animation-timing),
+        rotate var(--animation-timing), translate var(--animation-timing),
+        background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+
+    /* Transiciones añadidas */
+    transition: rotate var(--animation-timing), width var(--animation-timing), translate var(--animation-timing);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+
+    /* Transiciones añadidas */
+    transition: rotate var(--animation-timing), width var(--animation-timing), translate var(--animation-timing);
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+
+    /* Transición añadida para el cambio de estado */
+    transition: opacity var(--animation-timing), width var(--animation-timing);
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+    transition: translate var(--animation-timing), background-color var(--animation-timing);
+    translate: -100%;
+    padding: 0.5rem 1rem;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    background-color: rgba(0, 0, 0, 0.863);
+    color: var(--color-secundario);
+    min-width: 15rem;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    border-radius: 1%;
+
+    /* Transición para el desplazamiento */
+    transition: translate var(--animation-timing);
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+
+    /* Transición añadida para el desplazamiento */
+    transition: translate var(--animation-timing);
+}
+.sidebar-nav {
+    margin-top: 7rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    color: var(--color-secundario);
+    text-align: left;
+
+    /* Transición añadida para elementos de la navegación */
+    transition: color var(--animation-timing);
+} 
+  /* Estilos para el logo en el header */
+  
+  .logo-header {
+    
+      position: relative;
+      width: 100%; /* Hace que el logo ocupe el ancho disponible */
+      max-width: 7rem; /* Tamaño máximo del logo */
+      height: auto; /* Mantiene la proporción del logo */
+      align-self: flex-end;
+      max-height: 5rem;
+  }
+  
+  .image-container {
+      position: relative;
+      margin-top: 0%; /* Ajusta según sea necesario */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave alrededor del contenedor */
+      overflow: hidden; /* Asegura que la sombra no afecte elementos fuera del contenedor */
+
+  }
+  
+  .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+      display: block;
+  }
+  
+  .image-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      z-index: 9;
+      pointer-events: none; /* Para que el gradiente no interfiera con la interacción del usuario */
+  }
+  
+  .image-container .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 70px;
+      z-index: 10; /* Asegura que el texto esté por encima del gradiente */
+line-height: 0;
+  }
+  .overlay-text p:nth-of-type(5) { 
+    color: yellow;
+}
+
+  /* Estilos para la imagen de WhatsApp flotante */
+  
+  .icons{ 
+      margin-left: 9%;
+      transform: translateY(5px);
+  }
+  .mobilemenu{ 
+      position: relative;
+      transform: translateX(-15%);
+      top: -13px;
+      color: #c09841;
+      display: none;
+  }
+  
+      ol{ 
+         text-align: center   
+      }
+     
+      picture { 
+          display: block;
+          text-align: center;
+          margin: 0 auto;
+        }
+     h2{ 
+      text-align: center;
+      margin-top: 10%;
+      
+      
+     }
+   
+ 
+     h4{ 
+      margin-bottom: 3%;
+      font-size: 50px;
+      text-align: center;
+     }
+     
+
+  
+  .nodisponible {
+  background-color: rgba(226, 106, 106, 0.523);
+  display: none;
+  }
+
+
+   
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  margin: auto;
+  }
+  
+
+  
+  .close {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  color: #211919;
+  background-color: #a9a9a9;
+  font-size: 70px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 3000;
+  border-radius: 99%;
+  max-height: 5rem;
+  min-width: 5rem;
+  text-align: center;
+  }
+  
+  .prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  }
+  
+  .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  }
+  
+
+  
+  .prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+
+  
+  img {
+  max-width: 100%;
+  display: block;
+  z-index: 1;
+  position: relative;
+  }
+  
+  
+  
+  .prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+  z-index: 2000;
+  }
+  
+  .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  z-index: 2000;
+  }
+  
+
+
+  .nav-link{ 
+  text-decoration: none;
+  }
+  .map-link:visited {
+  color: #294c52;
+  }
+  .wpp-icon{ 
+  border-radius: 36%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+  .wpp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-image: url('imagenes/wpp.png');
+  
+  z-index: 3000;
+  
+  transition: transform 0.3s ease-in-out;
+  border-radius: 36%;
+  }
+
+
+  .sort-buttons button{ 
+  background-color: #bb923b;
+  font-family: inherit;
+  font-weight: 800;
+  color: var(--color-secundario);
+  padding: 1%;
+  margin-top: 2%;
+  margin-left: 2%;
+  border-radius: 4rem;
+  border: solid 0 ;
+  font-size: 1em;
+  z-index: 1000;
+  }
+  .container-deptos {
+      width: 100%;
+      padding: 0 2em;
+      box-sizing: border-box;
+      overflow-y: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      position: relative;
+      z-index: 1;
+
+      background-color: #7a7a7a94;
+  }
+  .imagenhome{ max-height: 81dvh;}
+  .desk-ul{ 
+    display: flex;
+    gap: 7%;
+    margin-bottom: 2%;
+    font-size: 1.3rem;
+  }
+  footer {
+    background-color: rgba(41, 76, 82, 0.31); /* Ajustado para mayor legibilidad */
+    color: black;
+    text-align: center;
+    padding: 0 20px 0 20px ;
+    position: relative;
+    width: 100%;
+    min-height: 80px; /* Ajusta este valor según tus necesidades */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column;
+}
+footer p:last-child {
+
+    color: var(--color-terciario);       /* Cambia el color del texto */
+    /* Puedes añadir más estilos aquí */
+}
+.footerline{
+    height: 1px;
+    width: 16em;
+    background-color:black;
+    margin-top: 1em;
+}
+.redes{
+    font-size: 30px;
+    font-weight: 800;
+    display: flex;
+    margin-top: 5%;
+
+
+}
+footer picture{
+    flex-direction: row;
+    display: flex;
+    gap: 2.5em;
+    max-width: 18em;
+margin-top: 3em;
+text-align: center;
+margin-bottom: 2em;
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: row;
+    background-color:var(--color-footer);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width:80%;
+    align-items:center; /* Opcional: puedes ajustar esto según tu diseño */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Estilos Mobile First */
+.card-img-container {
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+object-fit: cover;
+}
+
+
+.card-content {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-location a {
+    color: var(--color-terciario);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.card-price {
+    font-size: 1.1em;
+    color: var(--color-terciario);
+    margin-top: 10px;
+}
+
+.card-service, .card-description {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.card-description {
+    margin-top: 10px;
+}
+.card-contact{
+    z-index: 10;
+    color: black;
+}
+/* Contenedor del botón */
+.rent-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ajustar para ocupar todo el ancho de la pantalla */
+    position: absolute;
+    top: 50%; /* Centrar verticalmente el botón */
+    left: 50%; /* Centrar horizontalmente el botón */
+    transform: translate(-50%, 95%); /* Centrar el botón usando transformaciones */
+    z-index: 10;
+    background-color: transparent; /* Mantener transparente para no afectar el fondo */
+}
+
+/* Estilo del botón */
+.rent-button {
+    width: 40vh;
+    height: 10vh;
+    background: linear-gradient(135deg, #294c52 50%, #bb923b 50%);
+    color: var(--color-secundario);
+    font-size: 2.5em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 99999;
+    transition: transform 3s ease;
+    padding: 0em 0em;
+    animation: pulse 3s infinite ease-in-out; /* Animación en bucle */
+}
+
+.rent-button span {
+    color: var(--color-terciario);
+    margin-left: 9%;
+}
+
+.rent-button p {
+    display: inline;
+    margin-right: 9%;
+}
+
+/* Animación de agrandamiento y achicamiento en bucle */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+.rent-button:hover {
+    transform: scale(1.3); /* Interacción en hover */
+}
+.container{
+    display:flex;
+}
+.key, .aside-home{
+background-color: var(--color-terciario);
+max-height: fit-content;
+padding: 1.3em;
+display: flex;
+}
+.key img, .aside-home img{
+    max-width: 50%;
+}
+.aside-home img{
+    margin-left: 7em;
+}
+.key p{
+    font-size: large;
+    color: var(--color-secundario);
+    font-weight: 500;
+    margin-top: 2em;
+    margin-right: 4.5em;
+    text-align:center;
+}
+
+.aside-home p{
+    color: var(--color-terciario);
+    text-align:center;
+    font-weight:500;
+    margin-top: 2em;
+    font-size: large;
+    margin-left: 1em;
+}
+.aside-home{
+    background-color: var(--color-secundario);
+}
+
+  /* Media Queries mobile */
+  @media (max-width: 700px) { 
+    .outer-headings {
+        padding: 10px; /* Reduce el espacio interno en pantallas muy pequeñas */
+    }
+    .menu-wrapper{ 
+        z-index: 40;
+        margin-right: 2rem;
+    }
+    .card{ 
+        min-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+header{
+padding: 1px;
+height:2.8em;
+}
+.hamburger-menu{
+top: 3px;
+}
+    .inner-headings {
+        width: 120%; /* Aumenta el ancho para sobresalir del contenedor */
+        font-size: 39px; /* Reduce el tamaño de fuente */
+        margin-top: 2%; /* Ajusta el margen superior */
+        margin-left: -10%; /* Ajusta para sobresalir del lado izquierdo */
+        margin-right: -10%; /* Ajusta para sobresalir del lado derecho */
+        text-align: center; /* Alinea el texto al centro */
+        white-space: nowrap; /* Evita que el texto se envuelva */
+    }
+    
+
+    
+      .desk-ul {
+          display: none;
+      }
+
+      .logo-header{ 
+          position: relative;
+          margin-left: 85%;
+          max-height: 2.7rem;
+       
+          max-width: 60px; /* Reduce el tamaño del logo */
+
+          
+      }
+      .image-container .overlay-text{ 
+          text-align: center;
+      }
+  
+
+  h1 {
+      font-size: 5.2vh;
+  }
+
+ 
+  img { 
+      max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+      height: auto; /* Mantiene la proporción de la imagen */
+      border-radius: 0;
+  }
+  .btn {
+      width: 100%; /* Los botones ocuparán el ancho completo en pantallas pequeñas */
+      margin-bottom: 1em; /* Espacio entre botones */
+      z-index: 99999
+  }
+  * { 
+      border-radius: ;
+      font-family: 'Roboto', sans-serif;
+  }
+ 
+ .container-deptos{
+    padding: 8px;
+ }
+
+
+  li:last-child{ display: none;}
+  
+  
+  
+  nav.primary-navigation {
+      font-size: 14px;
+      padding: 10px 0 0 0;
+  }
+  
+  ul {
+      padding: 0;
+  }
+  
+  ul li {
+      display: block;
+      border-left: none;
+      border-top: 1px solid #ffffff;
+      padding: 10px 0;
+  }
+  
+  ul li a {
+      display: block;
+      padding: 10px;
+  }
+  
+  ul li ul {
+      position: static;
+      background: none;
+      box-shadow: none;
+  }
+  
+  ul li ul li {
+      margin-bottom: 10px;
+  }
+  
+  ul li ul li a {
+      padding: 10px;
+      border-left: none;
+  }
+  
+  ul li:hover > ul,
+  ul li ul:hover {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      min-width: 100%;
+      padding-top: 10px;
+  }
+  .sort-buttons > button { 
+      margin: 2%;
+      padding: 2%;
+      z-index: 999999;
+  }
+
+  .image-container{ 
+    height: 81vh;
+  }
+
+  @keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+footer img{
+    max-width: 3rem;
+}
+.redes{
+    font-size: 20px;
+    margin-bottom: 2em;
+
+}
+
+}
+ 
+  
+  @media (min-width: 700px) { 
+      .sidebar,
+      .sidebar-nav,
+      .hamburger-menu::after,
+      .hamburger-menu::before,
+      .hamburger-menu:has(input:checked),
+      .hamburger-menu:has(input:checked)::after,
+      .hamburger-menu {
+          display: none;
+      }
+      .card-img-container {
+        width: 40%;
+        height: auto;
+    }
+
+    .card-img {
+        width: 100%;
+        height: 100%;
+    }
+    h1{
+        font-size: 5vh;
+    }
+    .aside-home p{
+        font-size: 30px;
+        margin-left: 3em;
+        margin-top: 4em;
+    }
+    .key p{
+        font-size: 30px ;
+        margin-top: 4em;
+    }
+}
+  
